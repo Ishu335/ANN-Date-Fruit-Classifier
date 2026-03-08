@@ -1,7 +1,7 @@
 # Date Fruit Classification using Artificial Neural Networks (ANN)
 
 ## 📌 Project Overview
-This project implements an **Artificial Neural Network (ANN)** to classify different types of **date fruits** using morphological features from the dataset.  
+This project implements an **Artificial Neural Network (ANN)** to classify different types of **date fruits** using morphological features from the dataset.
 
 The model learns complex relationships between fruit characteristics and predicts the correct **date fruit class** using a **multi-class classification approach**.
 
@@ -35,37 +35,45 @@ The dataset contains features extracted from date fruit images.
 
 ### Target Variable
 
-**Class** → Type of Date Fruit
+**Class → Type of Date Fruit**
 
 The dataset contains **7 different classes of date fruits**.
 
 ---
 
-## 🧠 ANN Model Architecture
+# 🧠 ANN Model Architecture
 
 The Artificial Neural Network used in this project has the following structure:
 
-```
-Input Layer        : 32 Features
-Hidden Layer 1     : 62 Neurons (ReLU)
-Hidden Layer 2     : 62 Neurons (ReLU)
-Output Layer       : 7 Neurons (Softmax)
-```
 
-### Explanation
+---
+
+## 🏗 Architecture Diagram
+
+### ANN Architecture Visualization
+
+![ANN Architecture](https://github.com/Ishu335/ANN-Date-Fruit-Classifier/blob/4167b7f5546c10a747ed05b5e85dffbc981d131e/Architecture%20Image/ChatGPT%20Image%20Mar%208%2C%202026%2C%2006_51_43%20PM.png)
+
+![ANN Architecture](https://github.com/Ishu335/ANN-Date-Fruit-Classifier/blob/4167b7f5546c10a747ed05b5e85dffbc981d131e/Architecture%20Image/ChatGPT%20Image%20Mar%208%2C%202026%2C%2006_51_58%20PM.png)
+
+---
+
+## 🧩 Model Explanation
 
 - **Input Layer (32 neurons)**  
   Represents the 32 numerical features extracted from the dataset.
 
-- **Hidden Layers (62 neurons each)**  
-  Two fully connected layers learn complex patterns from the input features.
+- **Hidden Layer 1 (62 neurons)**  
+  A fully connected layer followed by **ReLU activation** to introduce non-linearity.
 
-- **Activation Function**
-  - **ReLU** is used in hidden layers
-  - **Softmax** is used in the output layer for **multi-class classification**
+- **Hidden Layer 2 (62 neurons)**  
+  Another dense layer that learns deeper feature representations.
 
 - **Output Layer (7 neurons)**  
-  Each neuron represents one **date fruit class**.
+  Produces logits for **7 date fruit classes**.
+
+⚠️ **Note:**  
+Softmax is **not applied in the model** because **PyTorch's `CrossEntropyLoss` already applies LogSoftmax internally.**
 
 ---
 
@@ -80,41 +88,4 @@ Output Layer       : 7 Neurons (Softmax)
 
 ---
 
-## 📈 Training Visualization
 
-Training and validation losses are tracked during model training.
-
-```python
-import matplotlib.pyplot as plt
-
-plt.plot(epoch_train_loss, label="Training Loss")
-plt.plot(epoch_val_loss, label="Validation Loss")
-plt.xlabel("Epoch")
-plt.ylabel("Loss")
-plt.title("Training vs Validation Loss")
-plt.legend()
-plt.show()
-```
-
----
-
-## 🎯 Results
-
-The ANN model successfully learns patterns in the dataset and performs **multi-class classification** of date fruit types based on morphological and texture features.
-
----
-
-## 🔮 Future Improvements
-
-- Hyperparameter tuning
-- Adding Dropout layers
-- Model optimization
-- Deploying the model as an API
-
----
-
-## 👨‍💻 Author
-
-**Ishwar Sonawane**
-
-Machine Learning Enthusiast | Python Developer
