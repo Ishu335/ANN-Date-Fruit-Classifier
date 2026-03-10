@@ -1,4 +1,4 @@
-# Date Fruit Classification using Artificial Neural Networks (ANN)
+# 🍎FruitMind – Date Fruit Classification using ANN
 
 ## 📌 Project Overview
 This project implements an **Artificial Neural Network (ANN)** to classify different types of **date fruits** using morphological features from the dataset.
